@@ -8,7 +8,6 @@ theme = "cactus"
 description = "Zapiski inżyniera."
 mainSection = "posts"
 mainSectionTitle = "Blog"
-tagsOverview = true
 rss = true
 showReadTime = true
 tagsOverview = false
