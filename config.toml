@@ -3,3 +3,47 @@ languageCode = "pl-pl"
 title = "vmario techblog"
 copyright = "Mariusz Chilmon"
 theme = "cactus"
+
+[params]
+description = "Zapiski inżyniera."
+mainSection = "posts"
+mainSectionTitle = "Blog"
+tagsOverview = true
+rss = true
+showReadTime = true
+tagsOverview = false
+
+[markup]
+  [markup.highlight]
+    lineNos = true
+
+  [markup.goldmark.renderer]
+    unsafe = true
+
+[[params.social]]
+name = "email"
+link = "vmario1986@gmail.com"
+
+[[params.social]]
+name = "linkedin"
+link = "https://www.linkedin.com/in/mariuszchilmon/"
+
+[[menu.main]]
+name = "Start"
+url = "/"
+weight = 1
+
+[[menu.main]]
+name = "Wpisy"
+url = "/posts"
+weight = 2
+
+[[menu.main]]
+name = "Tagi"
+url = "/tags"
+weight = 3
+
+[[menu.main]]
+name = "O"
+url = "/about"
+weight = 4
