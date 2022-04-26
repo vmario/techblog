@@ -24,6 +24,23 @@ article {
       display: inline;
     }
   }
+  section {
+    text-align: center;
+    img {
+      max-width: 75%;
+    }
+    footer {
+      text-align: left;
+      &:before {
+        content: "— ";
+      }
+      span {
+        &:after {
+          content: ", ";
+        }
+      }
+    }
+  }
   .content {
     h2 {
       &:before {

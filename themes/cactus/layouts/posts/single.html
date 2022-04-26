@@ -59,6 +59,21 @@
       </div>
     </header>
 
+    <section>
+      {{ with .Resources.GetMatch "header.png" }}
+        {{ with .Resize "700x webp picture Lanczos" }}
+          <img alt="Ozdobnik" src="{{ .RelPermalink }}" {{ with $.Page.Params.fortune }}title="{{ . }}"{{ end }}>
+        {{ end }}
+      {{ end }}
+      {{ with $motto := .Params.motto }}
+        <blockquote>
+          <p>{{ .quote }}</p>
+          {{ with .cite }}
+		  <footer>{{ with $motto.author }}<span>{{ . }}</span>{{ end }}<cite>{{ . }}</cite></footer>
+          {{ end }}
+        </blockquote>
+      {{ end }}
+    </section>
     {{ if .Site.Params.tocInline }}
     <div id="toc">
       {{ .TableOfContents }}
