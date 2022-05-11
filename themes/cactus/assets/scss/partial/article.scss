@@ -53,6 +53,25 @@ article {
         font-size: 1.2rem;
       }
     }
+    kbd {
+      font-family: $font-family-mono;
+      background-color: #eee;
+      padding: 0 5px;
+      border: 1px dotted $color-border;
+      border-radius: 2px;
+      -webkit-border-radius: 2px;
+    }
+    figure {
+      margin: auto;
+    }
+    figcaption h4 {
+      font-style: normal;
+      text-align: center;
+      &:before {
+        font-style: italic;
+        content: "Rys. ";
+      }
+    }
   }
   .content img,
   .content video {
