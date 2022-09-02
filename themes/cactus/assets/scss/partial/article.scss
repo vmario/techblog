@@ -67,10 +67,9 @@ article {
     figcaption h4 {
       font-style: normal;
       text-align: center;
-      &:before {
-        font-style: italic;
-        content: "Rys. ";
-      }
+      font-weight: normal;
+      font-size: 0.9em;
+      margin-top: 0.5em;
     }
   }
   .content img,
