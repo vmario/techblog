@@ -72,6 +72,40 @@ article {
       margin-top: 0.5em;
     }
   }
+  blockquote {
+    border-left: 2px solid #8c8c8c;
+    font-style: italic;
+    margin: 1em 0.8em;
+    padding: 0em 1em 0em 2em;
+    position: relative;
+    cite {
+      font-style: normal;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: -4px;
+      height: 2em;
+      width: 5px;
+      margin-top: -1em;
+      background-color: white;
+      font-size: 1.5em;
+    }
+    &:after {
+      content: "❞";
+      position: absolute;
+      top: 50%;
+      left: -0.5em;
+      font-style: normal;
+      text-align: center;
+      text-indent: -2px;
+      width: 1em;
+      margin-top: -0.6em;
+      font-size: 2.5em;
+      color: #8c8c8c;
+    }
+  }
   .content img,
   .content video {
     display: block;
@@ -188,6 +222,30 @@ article {
 
     &:before {
       content: "|";
+    }
+  }
+}
+@media (max-width: 480px) {
+  article {
+    blockquote {
+      border-top: 2px solid #8c8c8c;
+      border-bottom: 2px solid #8c8c8c;
+      border-left: none;
+      margin: 1.5em 0;
+      padding: 0.2em 1em;
+      &:before {
+        left: 50%;
+        top: 0;
+        height: 4px;
+        margin-top: -3px;
+        margin-left: -1em;
+        width: 2em;
+      }
+      &:after {
+        left: 50%;
+        top: 0;
+        margin-left: -0.5em;
+      }
     }
   }
 };
