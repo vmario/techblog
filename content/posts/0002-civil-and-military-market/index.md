@@ -1,6 +1,6 @@
 ---
 title: "Rynek cywilny a wojskowy"
-date: 2022-08-11
+date: 2022-09-13
 draft: false
 tags: [felieton, rynek]
 fortune: "Moje określenie, które stale przy grach wojennych powtarzam, jest, że wojsko bez pracy nad łącznością staje się zwyczajną dziewką publiczną, szukającą awantur miłosnych po różnych lasach i pagórkach, bez żadnej korzyści dla wojny oprócz zadowolenia rozdziwaczonej pindy."
