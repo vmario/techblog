@@ -53,6 +53,17 @@ article {
         font-size: 1.2rem;
       }
     }
+    h3 {
+      &:before {
+        position: absolute;
+        top: -4px;
+        left: -1rem;
+        color: $color-accent-1;
+        content: "·";
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+    }
     kbd {
       font-family: $font-family-mono;
       background-color: #eee;
