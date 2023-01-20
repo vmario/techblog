@@ -156,7 +156,7 @@
     overflow: auto;
     margin-top: 1rem;
     padding-right: 2rem;
-    max-width: 20em;
+    max-width: 25em;
     max-height: calc(95vh - 7rem);
     text-align: right;
 
@@ -219,7 +219,7 @@
     }
   }
 }
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 1320px) {
   #header-post {
     #toc {
       display: none;
