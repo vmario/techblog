@@ -89,9 +89,7 @@ article {
     margin: 1em 0.8em;
     padding: 0em 1em 0em 2em;
     position: relative;
-    cite {
-      font-style: normal;
-    }
+    font-style: normal;
     &:before {
       content: "";
       position: absolute;
