@@ -16,4 +16,4 @@ Oczywiście, są też kwestie drugorzędne, jak chęć pisania jako takiego czy 
 
 Zatem _gwiazd szukam, przewodniczek łodzi_[^1]...
 
-[^1]: [Adam Mickiewicz, _Stepy Akermańskie_. 1899](https://pl.wikisource.org/wiki/Stepy_Akerma%C5%84skie_(Mickiewicz,_1899))
+[^1]: Adam Mickiewicz, [_Stepy Akermańskie_. 1899](https://pl.wikisource.org/wiki/Stepy_Akerma%C5%84skie_(Mickiewicz,_1899))
