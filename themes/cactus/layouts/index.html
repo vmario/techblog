@@ -1,31 +1,31 @@
 {{ define "main" }}
   <section id="about">
-  {{ if isset .Site.Params "description" }}
+  {{- if isset .Site.Params "description" }}
     {{ .Site.Params.description | $.Page.RenderString }}
-  {{ end }}
-  {{ if isset .Site.Params "social" }}
+  {{ end -}}
+  {{- if isset .Site.Params "social" }}
       <p>Znajdź mnie na
       {{- $length := (len .Site.Params.social) -}}
       {{- range $index, $elem := .Site.Params.social -}}
       {{ if eq $elem.name "email" }}
-        <a class="icon" target="_blank" rel="noopener" href="mailto:{{ $elem.link }}" aria-label="Email">
+        <a class="icon" target="_blank" rel="noopener" href="mailto:{{ $elem.link }}" title="E-mail">
           <i class="fas fa-envelope" aria-hidden="true"></i>
         </a>
         {{ else if eq $elem.name "rss" }}
-        <a class="icon" target="_blank" rel="noopener" href="{{ $elem.link }}" aria-label="RSS">
+        <a class="icon" target="_blank" rel="noopener" href="{{ $elem.link }}" title="Kanał RSS">
           <i class="fas fa-rss" aria-hidden="true"></i>
         </a>
-        {{ else if eq $elem.name "scholar" }}
-        <a class="icon" target="_blank" rel="noopener" href="{{ $elem.link }}" aria-label="Google Scholar">
-          <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+        {{ else if eq $elem.name "linkedin" }}
+        <a class="icon" target="_blank" rel="noopener" href="{{ $elem.link }}" title="Profil na LinkedIn">
+          <i class="fab fa-{{ lower $elem.name }}" aria-hidden="true"></i>
         </a>
         {{ else }}
-        <a class="icon" target="_blank" rel="noopener" href="{{ $elem.link }}" aria-label="{{ $elem.name }}">
+        <a class="icon" target="_blank" rel="noopener" href="{{ $elem.link }}" title="{{ $elem.name }}">
           <i class="fab fa-{{ lower $elem.name }}" aria-hidden="true"></i>
         </a>
         {{- end -}}
         {{- if (lt (add $index 2) $length) -}}
-          {{- print " , " -}}
+          {{- print ", " -}}
         {{- else if (lt (add $index 1) $length) -}}
           {{- print " i " -}}
         {{- else -}}
@@ -33,8 +33,8 @@
         {{- end -}}
       {{ end }}
       </p>
-  {{ end }}
-  {{ partial "optional-about.html" . }}
+  {{ end -}}
+  {{- partial "optional-about.html" . -}}
   </section>
   <section id="writing">
     <span class="h1"><a href="{{ .Site.Params.mainSection | relURL }}">{{ .Site.Params.mainSectionTitle | default "Writings" }}</a></span>
@@ -66,9 +66,7 @@
         </li>
       {{ end }}
     </ul>
-
     {{ partial "pagination.html" . }}
-
     {{ else }}
     <ul class="post-list">
       {{ .Scratch.Set "count" 5 }}
@@ -84,7 +82,6 @@
     </ul>
     {{ end }}
   </section>
-
   {{ $showProjectsList := false }}
   {{ if (isset .Site.Params "showprojectslist") }}
     {{ $showProjectsList = .Site.Params.showProjectsList }}
