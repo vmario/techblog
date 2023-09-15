@@ -116,17 +116,10 @@
     #TableOfContents > ul > li > ul > li > ul > li {
       display: none;
     }
-    // .toc-level-5
-    //   display: none
-
-    // .toc-level-6
-    //   display: none
-
-    // .toc-number
-    //   display: none
   }
 }
-@media screen and (min-width: 500px) {
+
+@media screen and (min-width: 1200px) {
   #footer-post-container {
     display: none;
   }

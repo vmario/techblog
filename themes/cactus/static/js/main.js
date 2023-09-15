@@ -25,25 +25,6 @@ $(document).ready(function() {
    * for Desktop, tablet and mobile.
    */
   if ($(".post").length) {
-    var menu = $("#menu");
-    var nav = $("#menu > #nav");
-
-    /**
-     * Add a scroll listener to the menu to hide/show the navigation links.
-     */
-    if (menu.length) {
-      $(window).on("scroll", function() {
-        var topDistance = menu.offset().top;
-
-        // hide only the navigation links on desktop
-        if (!nav.is(":visible") && topDistance < 50) {
-          nav.show();
-        } else if (nav.is(":visible") && topDistance > 100) {
-          nav.hide();
-        }
-      });
-    }
-
     /**
      * Show mobile navigation menu after scrolling upwards,
      * hide it again after scrolling downwards.
