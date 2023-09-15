@@ -25,6 +25,10 @@ name = "email"
 link = "vmario@vmario.org"
 
 [[params.social]]
+name = "rss"
+link = "index.xml"
+
+[[params.social]]
 name = "linkedin"
 link = "https://www.linkedin.com/in/mariuszchilmon/"
 
