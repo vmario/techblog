@@ -61,7 +61,7 @@
 
     <section>
       {{ with .Resources.GetMatch "header.png" }}
-        {{ with .Resize "700x webp picture Lanczos" }}
+        {{ with .Resize "x350 webp picture Lanczos" }}
           <img alt="Ozdobnik" src="{{ .RelPermalink }}" {{ with $.Page.Params.fortune }}title="{{ . }}"{{ end }}>
         {{ end }}
       {{ end }}
