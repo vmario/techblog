@@ -14,9 +14,6 @@ motto:
 ## Spłaszczanie struktury kodu
 
 Jako osobowość typu porządkującego, zobaczywszy w [The Zen of Python](https://peps.python.org/pep-0020/) zalecenie:
-```
-Flat is better than nested.
-```
 > Flat is better than nested.
 >
 > --- <cite>PEP20 — The Zen of Python</cite>
