@@ -12,6 +12,7 @@ rss = true
 showReadTime = true
 tagsOverview = false
 show_updated = true
+showAllPostsOnHomePage = true
 
 [markup]
   [markup.highlight]
