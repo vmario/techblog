@@ -281,7 +281,6 @@ Pagination on posts archive can be disabled to show all posts in chronological o
 - [x] RSS
 - [ ] I18n
 - [x] Analytics
-- [ ] Local Search
 - [ ] toc template
 - [ ] Customizable copyright year
 - [ ] gallery
