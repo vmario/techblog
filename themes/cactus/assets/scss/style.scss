@@ -1,6 +1,5 @@
 @import "variables";
 @import "colors/{{ site.Params.colortheme | default "white" }}";
-@import "util";
 @import "mixins";
 @import "extend";
 @import "fonts";
