@@ -1,14 +1,13 @@
 <div id="header-post">
   <span id="menu">
-    <span id="nav">
+    <div id="nav">
       <ul>
         {{ range .Site.Menus.main }} 
         <li><a href="{{ .URL }}">{{ .Name }}</a></li>
         {{ end }}
       </ul>
-    </span>
-    <br/>
-    <span id="actions">
+    </div>
+    <div id="actions">
       <ul>
         {{ if .Prev }}
         <li>
@@ -30,8 +29,7 @@
           </a>
         </li>
       </ul>
-    </span>
-    <br/>
+    </div>
     {{ if not .Site.Params.tocInline }}
     <div id="toc">
       {{ .TableOfContents }}
