@@ -2,16 +2,12 @@
 <html lang="{{ .Site.LanguageCode }}">
 {{ partial "head.html" . }}
 <body>
-  <div class="content index py4">
-
+  <main>
     {{ partial "header.html" . }}
-
     {{ block "main" . }}
     {{ end }}
-
     {{ partial "footer.html" . }}
-
-  </div>
+  </main>
 </body>
 
 <link rel="stylesheet" href={{ "lib/font-awesome/css/all.min.css" | relURL }}>

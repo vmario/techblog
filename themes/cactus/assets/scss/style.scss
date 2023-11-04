@@ -39,7 +39,13 @@ body {
 
   @extend $base-style !optional;
 }
-.content {
+
+main {
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+
+main, .content {
   position: relative;
   display: flex;
   flex-direction: column;
