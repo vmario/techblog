@@ -3,26 +3,13 @@
 {{ partial "head.html" . }}
 <body>
   <main>
-
   {{ partial "page_nav.html" . }}
-
   <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
     <header>
       <h1 class="posttitle" itemprop="name headline">
         {{ .Title }}
       </h1>
       <div class="meta">
-        {{ if (or (isset .Site "author") (isset .Site "title"))}}
-        <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <span itemprop="name">
-            {{ if isset .Site "author" }}
-              {{ .Site.Author }}
-            {{ else if isset .Site "title" }}
-              {{ .Site.Title }}
-            {{ end }}
-          </span>
-        </span>
-        {{ end }}
         <div class="postdate">
           {{ $dataFormat := .Site.Params.dateFormat | default "2006-01-02" }}
           <time datetime="{{ .Date }}" itemprop="datePublished">{{ .Date.Format $dataFormat }}</time>
@@ -58,7 +45,6 @@
         {{ end }}
       </div>
     </header>
-
     <section>
       {{ with .Resources.GetMatch "header.png" }}
         {{ with .Resize "x350 webp picture Lanczos" }}
@@ -78,12 +64,9 @@
       {{ .Content}}
     </div>
   </article>
-
   {{ partial "footer.html" . }}
-
   </main>
 </body>
-
 <link rel="stylesheet" href={{ "/lib/font-awesome/css/all.min.css" | relURL }}>
 <script src={{ "/lib/jquery/jquery.min.js" | relURL }}></script>
 {{ if not (isset site.Params "disablecopy") }}
