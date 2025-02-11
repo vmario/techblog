@@ -68,10 +68,7 @@
   </main>
 </body>
 <link rel="stylesheet" href={{ "/lib/font-awesome/css/all.min.css" | relURL }}>
-<script src={{ "/lib/jquery/jquery.min.js" | relURL }}></script>
-{{ if not (isset site.Params "disablecopy") }}
 <script src={{ "js/code-copy.js"  | relURL }}></script>
-{{ end }}
 {{ $mathjax := false }}
 {{ if isset .Params "mathjax" }}
   {{ $mathjax = .Params.mathjax }}
