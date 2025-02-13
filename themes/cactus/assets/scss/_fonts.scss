@@ -1,6 +1,31 @@
 @font-face {
-  font-style: normal;
   font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: normal;
+  src: local("JetBrains Mono Regular"), local("JetBrains-Mono-Regular"), url("../fonts/JetBrainsMono-Regular.woff2") format("woff2");
   font-display: swap;
-  src: local("JetBrains Mono"), local("JetBrains-Mono"), url("../lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2") format("woff2"), url("../lib/JetBrainsMono/web/woff/JetBrainsMono-Regular.woff") format("woff"), url("../lib/JetBrainsMono/web/eot/JetBrainsMono-Regular.eot") format("embedded-opentype"), url("../lib/JetBrainsMono/ttf/JetBrainsMono-Regular.ttf") format("truetype");
+};
+
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: italic;
+  font-weight: normal;
+  src: local("JetBrains Mono Italic"), local("JetBrains-Mono-Italic"), url("../fonts/JetBrainsMono-Italic.woff2") format("woff2");
+  font-display: swap;
+};
+
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: bold;
+  src: local("JetBrains Mono Bold"), local("JetBrains-Mono-Bold"), url("../fonts/JetBrainsMono-Bold.woff2") format("woff2");
+  font-display: swap;
+};
+
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: italic;
+  font-weight: bold;
+  src: local("JetBrains Mono Bold Italic"), local("JetBrains-Mono-BoldItalic"), url("../fonts/JetBrainsMono-BoldItalic.woff2") format("woff2");
+  font-display: swap;
 };
