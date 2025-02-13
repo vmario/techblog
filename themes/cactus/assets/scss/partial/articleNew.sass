@@ -1,0 +1,18 @@
+// Wyłączamy konflikt z Nerd Fonts
+.chroma .nf
+  all: unset
+
+@import "syntax"
+
+.chroma
+  background-color: $color-background-code
+  .c, .cm, .c1, .cs
+    font-style: italic
+  .lntd:nth-child(2)
+    width: 100%
+
+pre
+  background-color: $color-background-code
+
+div.highlight, pre, div.chroma, pre table
+  border-radius: 0.3rem;

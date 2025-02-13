@@ -3,10 +3,10 @@
   <link rel="preload" href="{{ "fonts/JetBrainsMono-Italic.woff2" | relURL }}" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="preload" href="{{ "fonts/JetBrainsMono-Bold.woff2" | relURL }}" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="preload" href="{{ "fonts/JetBrainsMono-BoldItalic.woff2" | relURL }}" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.nerdfonts.com/assets/css/webfont.css">
   {{- $options := (dict "targetPath" "css/styles.css" "outputStyle" "compressed" "enableSourceMap" "true") -}}
   {{- $styles := resources.Get "scss/style.scss" | resources.ExecuteAsTemplate "scss/style.scss" . | css.Sass $options | resources.Fingerprint "sha512" }}
   <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}">
-  <link rel="stylesheet" href="https://www.nerdfonts.com/assets/css/webfont.css">
   {{- range .Site.Params.css }}<link rel="stylesheet" href="{{ . | relURL }}">{{ end -}}
   {{ partial "favicon.html" . }}
   <link rel="canonical" href="{{ .Permalink }}">

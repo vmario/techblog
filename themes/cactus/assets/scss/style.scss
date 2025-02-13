@@ -143,6 +143,7 @@ main, .content {
 @import "partial/post/actions_desktop";
 @import "partial/index";
 @import "partial/article";
+@import "partial/articleNew";
 @import "partial/archive";
 @import "partial/footer";
 @import "partial/pagination";
@@ -152,9 +153,6 @@ main, .content {
 pre {
   overflow-x: auto;
   padding: 15px 15px 10px 15px;
-  border: 1px dotted $color-border;
-  border-radius: 2px;
-  -webkit-border-radius: 2px;
   font-size: 13px;
   font-family: $font-family-mono;
   line-height: 22px;
@@ -165,7 +163,6 @@ pre {
     top: 0;
     right: 0;
     border: 0;
-    border-radius: 0 2px;
     padding: 0;
     font-family: "JetBrains Mono", monospace;
     font-weight: 800;
@@ -195,16 +192,9 @@ code {
   font-family: $font-family-mono;
   padding: 0 5px;
   border: 1px dotted $color-border;
-  border-radius: 2px;
-  -webkit-border-radius: 2px;
 }
 
 .highlight {
-
-  & > div {
-    border-radius: 2px;
-    -webkit-border-radius: 2px;
-  }
 
   pre {
     border: none;
