@@ -17,6 +17,8 @@ showAllPostsOnHomePage = true
 [markup]
   [markup.highlight]
     lineNos = true
+    style = "monokailight"
+    noClasses = false
 
   [markup.goldmark.renderer]
     unsafe = true
