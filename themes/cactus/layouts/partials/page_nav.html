@@ -11,16 +11,16 @@
       <ul>
         {{ if .Prev }}
         <li>
-          <a class="icon" href=" {{ .Prev.Permalink }}" title="Poprzedni post"></a>
+          <a class="icon" href=" {{ .Prev.Permalink }}" title="Poprzedni post"><i class="nf nf-fa-chevron_left"></i></a>
         </li>
         {{ end }}
         {{ if .Next }}
         <li>
-          <a class="icon" href="{{ .Next.Permalink }}" title="Następny post"></a>
+          <a class="icon" href="{{ .Next.Permalink }}" title="Następny post"><i class="nf nf-fa-chevron_right"></i></a>
         </li>
         {{ end }}
         <li>
-          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" title="Przewiń do góry"></a>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" title="Przewiń do góry"><i class="nf nf-fa-chevron_up"></i></a>
         </li>
       </ul>
     </div>
