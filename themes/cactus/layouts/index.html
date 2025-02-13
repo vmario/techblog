@@ -8,11 +8,11 @@
       {{- $length := (len .Site.Params.social) -}}
       {{- range $index, $elem := .Site.Params.social -}}
       {{ if eq $elem.name "email" }}
-        <a class="icon" target="_blank" rel="noopener" href="mailto:{{ $elem.link }}" title="E-mail"></a>
+	  <a class="icon" target="_blank" rel="noopener" href="mailto:{{ $elem.link }}" title="E-mail"><i class="nf nf-fa-envelope"></i></a>
         {{ else if eq $elem.name "rss" }}
-        <a class="icon" target="_blank" rel="noopener" href="{{ $elem.link }}" title="Kanał RSS"></a>
+		<a class="icon" target="_blank" rel="noopener" href="{{ $elem.link }}" title="Kanał RSS"><i class="nf nf-fa-rss"></i></a>
         {{ else if eq $elem.name "linkedin" }}
-        <a class="icon" target="_blank" rel="noopener" href="{{ $elem.link }}" title="Profil na LinkedIn"></a>
+		<a class="icon" target="_blank" rel="noopener" href="{{ $elem.link }}" title="Profil na LinkedIn"><i class="nf nf-fa-linkedin_square"></i></a>
         {{ else }}
         <a class="icon" target="_blank" rel="noopener" href="{{ $elem.link }}" title="{{ $elem.name }}"></a>
         {{- end -}}
