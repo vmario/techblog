@@ -1,18 +1,35 @@
+$code-shadow-offset: 0.2rem
+$code-shadow-geometry: $code-shadow-offset $code-shadow-offset 0 0
+
 // Wyłączamy konflikt z Nerd Fonts
 .chroma .nf
   all: unset
 
+// Importujemy predefiniowane style kolorowania składni
 @import "syntax"
 
+// Tuningowanie kolorowania składni
 .chroma
   background-color: $color-background-code
+  .hl
+    background-color: darken($color-background-code, 4%)
+    box-shadow: 0.1rem 0.1rem 0 0 darken($color-background-code, 24%)
   .c, .cm, .c1, .cs
     font-style: italic
   .lntd:nth-child(2)
     width: 100%
 
-pre
+pre, code, em
   background-color: $color-background-code
 
-div.highlight, pre, div.chroma, pre table
-  border-radius: 0.3rem;
+pre
+  box-shadow: $code-shadow-geometry $color-accent-3
+
+.highlight pre
+  box-shadow: $code-shadow-geometry $color-accent-1
+
+p code
+  box-shadow: $code-shadow-geometry $color-accent-3
+  font-family: $font-family-mono
+  padding: 0 0.2rem
+  margin-right: $code-shadow-offset

@@ -188,19 +188,7 @@ pre {
   }
 }
 
-code {
-  font-family: $font-family-mono;
-  padding: 0 5px;
-  border: 1px dotted $color-border;
-}
-
 .highlight {
-
-  pre {
-    border: none;
-    background: none;
-  }
-
   table {
 
     pre {
