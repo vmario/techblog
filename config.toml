@@ -16,7 +16,7 @@ showAllPostsOnHomePage = true
 
 [markup]
   [markup.highlight]
-    lineNos = true
+    lineNos = false
     style = "monokailight"
     noClasses = false
 
