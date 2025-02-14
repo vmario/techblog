@@ -75,7 +75,7 @@ Flashing  with  command:/home/vmario/.arduino-create/arduino/avrdude/6.3.0-ardui
 
 Napisanie odpowiednika programu z Arduino IDE nie było skomplikowane. Ze [schematu ideowego](https://content.arduino.cc/assets/UNO-TH_Rev3e_sch.pdf), wynika, że dioda _L_ sterowana jest wzmacniaczem operacyjnym podłączonym do linii _SCK_, czyli pinu _PB5_. Procesor to ATmega328P taktowana rezonatorem 16&nbsp;MHz. Nic więcej wiedzieć nie potrzebowałem. Przygotowałem plik `main.cpp`:
 
-```cpp
+```cpp {hl_lines=["19-22"]}
 #include <avr/io.h>
 #include <util/delay.h>
 
