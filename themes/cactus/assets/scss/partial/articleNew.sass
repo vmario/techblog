@@ -22,8 +22,16 @@ $code-shadow-geometry: $code-shadow-offset $code-shadow-offset 0 0
 pre, code, em
   background-color: $color-background-code
 
+pre, code
+  font-family: $font-family-mono
+
 pre
+  overflow-x: auto
+  position: relative
+  padding: 2.2em 1em 0.5em
+  font-size: 0.9em
   box-shadow: $code-shadow-geometry $color-accent-3
+  line-height: 1.5em
 
 .highlight pre
   box-shadow: $code-shadow-geometry $color-accent-1
@@ -33,3 +41,29 @@ p code
   font-family: $font-family-mono
   padding: 0 0.2rem
   margin-right: $code-shadow-offset
+
+pre .code-copy-btn, pre code[data-lang]::before
+  position: absolute
+  top: 0
+  color: $color-background-code
+  font-size: 0.9em
+  padding: 0.5em 1em 0.5em
+  line-height: 1em
+
+pre .code-copy-btn
+    left: 0
+    border: 0
+    text-align: right
+    background-color: $color-accent-3
+    cursor: pointer
+
+    &:hover
+      background-color: #666
+      background-color: $color-border
+
+pre code[data-lang]::before
+  content: attr(data-lang)
+  display: block
+  background-color: $color-accent-3
+  right: 0
+  text-transform: uppercase

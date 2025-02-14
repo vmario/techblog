@@ -1,19 +1,18 @@
 (() => {
-
   function createCopyButton(codeNode) {
     const copyBtn = document.createElement('button')
     copyBtn.className = 'code-copy-btn'
     copyBtn.type = 'button'
-    copyBtn.innerText = 'copy'
+    copyBtn.innerText = 'Kopiuj'
 
     let resetTimer
     copyBtn.addEventListener('click', () => {
       navigator.clipboard.writeText(codeNode.innerText).then(() => {
-        copyBtn.innerText = 'copied!'
+        copyBtn.innerText = 'Skopiowane!'
       }).then(() => {
         clearTimeout(resetTimer)
         resetTimer = setTimeout(() => {
-          copyBtn.innerText = 'copy'
+          copyBtn.innerText = 'Kopiuj'
         }, 1000)
       })
     })
@@ -32,5 +31,4 @@
   .forEach((btn) => {
     btn.remove()
   })
-
 })()
