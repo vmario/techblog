@@ -1,69 +1,79 @@
 $code-shadow-offset: 0.2rem
 $code-shadow-geometry: $code-shadow-offset $code-shadow-offset 0 0
 
-// Wyłączamy konflikt z Nerd Fonts
+// Reset konfliktu z Nerd Fonts
 .chroma .nf
-  all: unset
+	all: unset
 
-// Importujemy predefiniowane style kolorowania składni
+// Import predefiniowanych stylów kolorowania składni
 @import "syntax"
 
 // Tuningowanie kolorowania składni
 .chroma
-  background-color: $color-background-code
-  .hl
-    background-color: darken($color-background-code, 4%)
-    box-shadow: 0.1rem 0.1rem 0 0 darken($color-background-code, 24%)
-  .c, .cm, .c1, .cs
-    font-style: italic
-  .lntd:nth-child(2)
-    width: 100%
+	background-color: $color-background-code
+	.hl
+		background-color: darken($color-background-code, 4%)
+		box-shadow: 0.1rem 0.1rem 0 0 darken($color-background-code, 24%)
+	.c, .cm, .c1, .cs
+		font-style: italic
+	.lntd:nth-child(2)
+		width: 100%
 
-pre, code, em
-  background-color: $color-background-code
+pre, code, kbd, em
+	background-color: $color-background-code
 
-pre, code
-  font-family: $font-family-mono
+pre, code, kbd
+	font-family: $font-family-mono
+
+p code, kbd
+	box-shadow: $code-shadow-geometry $color-accent-3
+	font-family: $font-family-mono
+	padding: 0 0.2rem
+	margin-right: $code-shadow-offset
+
+p a code
+	box-shadow: $code-shadow-geometry $color-border
+
+p a:hover code
+	box-shadow: $code-shadow-geometry $color-link
 
 pre
-  overflow-x: auto
-  position: relative
-  padding: 2.2em 1em 0.5em
-  font-size: 0.9em
-  box-shadow: $code-shadow-geometry $color-accent-3
-  line-height: 1.5em
+	overflow-x: auto
+	position: relative
+	padding: 2.2em 1em 0.5em
+	font-size: 0.9em
+	box-shadow: $code-shadow-geometry $color-accent-3
+	line-height: 1.5em
 
 .highlight pre
-  box-shadow: $code-shadow-geometry $color-accent-1
-
-p code
-  box-shadow: $code-shadow-geometry $color-accent-3
-  font-family: $font-family-mono
-  padding: 0 0.2rem
-  margin-right: $code-shadow-offset
+	box-shadow: $code-shadow-geometry $color-accent-1
 
 pre .code-copy-btn, pre code[data-lang]::before
-  position: absolute
-  top: 0
-  color: $color-background-code
-  font-size: 0.9em
-  padding: 0.5em 1em 0.5em
-  line-height: 1em
+	position: absolute
+	top: 0
+	color: $color-background-code
+	font-size: 0.9em
+	padding: 0.5em 1em 0.5em
+	line-height: 1em
 
 pre .code-copy-btn
-    left: 0
-    border: 0
-    text-align: right
-    background-color: $color-accent-3
-    cursor: pointer
+	left: 0
+	border: 0
+	text-align: right
+	background-color: $color-accent-3
+	cursor: pointer
 
-    &:hover
-      background-color: #666
-      background-color: $color-border
+	&:hover
+		background-color: #666
+		background-color: $color-border
 
 pre code[data-lang]::before
-  content: attr(data-lang)
-  display: block
-  background-color: $color-accent-3
-  right: 0
-  text-transform: uppercase
+	content: attr(data-lang)
+	display: block
+	background-color: $color-accent-3
+	right: 0
+	text-transform: uppercase
+
+
+kbd
+	border: 1px solid $color-accent-3
