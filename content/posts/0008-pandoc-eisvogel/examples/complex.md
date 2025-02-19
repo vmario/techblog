@@ -24,7 +24,8 @@ header-includes: |
 \awesomebox[teal]{2pt}{\faBook}{teal}{
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     Morbi eu nulla quis tortor ullamcorper porta.
-    Interdum et malesuada fames ac ante ipsum primis in faucibus. \lstinline{int foo(42)}.
+    Interdum et malesuada fames ac ante ipsum primis in faucibus.
+    \lstinline{int foo(42)}.
 }
 
 # Wyświetlacz alfanumeryczny
