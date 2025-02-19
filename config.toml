@@ -3,6 +3,16 @@ languageCode = "pl-pl"
 title = "vmario techblog"
 copyright = "Mariusz Chilmon"
 theme = "cactus"
+ignoreFiles = ["examples/"]
+
+[markup]
+  [markup.highlight]
+    lineNos = false
+    style = "monokailight"
+    noClasses = false
+
+  [markup.goldmark.renderer]
+    unsafe = true
 
 [params]
 description = "Zapiski inżyniera."
@@ -13,15 +23,6 @@ showReadTime = true
 tagsOverview = false
 show_updated = true
 showAllPostsOnHomePage = true
-
-[markup]
-  [markup.highlight]
-    lineNos = false
-    style = "monokailight"
-    noClasses = false
-
-  [markup.goldmark.renderer]
-    unsafe = true
 
 [[params.social]]
 name = "email"
