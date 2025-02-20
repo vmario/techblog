@@ -1,6 +1,6 @@
 ---
 title: "Tworzenie dokumentów z Pandoc i Eisvogel"
-date: 2025-02-19
+date: 2025-02-20
 draft: false
 tags: [typografia, latex, pandoc]
 
@@ -18,7 +18,7 @@ Wadą Pandoca, przynajmniej na Arch Linuksie, jest masa bardzo często aktualizo
 
 Niestety, to jest dopiero początek okupowania dysku, bowiem głównym silnikiem Pandoca służącym do renderowania PDF-ów jest, jakże by inaczej, LaTeX. Ten zajmuje u mnie blisko 2&nbsp;GiB, z czego lwią część stanowią dodatkowe fonty. Tu jednak nie szukałem żadnych optymalizacji. Obecnie jestem pogodzony z faktem, że gdy wyrzucę LaTeX-a drzwiami, wróci oknem. Zbyt dobrze działa.
 
-## Prosty dokument
+## Prosty przykład
 
 Weźmy teraz plik, prezentujący podstawowe formatowanie Markdown:
 
@@ -81,7 +81,7 @@ Weźmy teraz plik, prezentujący podstawowe formatowanie Markdown:
     };
     ```
 
-Kompilujemy to prostą komendą:
+Kompilujemy to prostą komendą, przekazującą przy okazji datę kompilacji:
 
 ```
 pandoc simple.md -o simple-generic.pdf --metadata date="$(date +%F)"
@@ -89,16 +89,38 @@ pandoc simple.md -o simple-generic.pdf --metadata date="$(date +%F)"
 
 {{< figure src="simple-generic.webp" link="simple-generic.webp" title="Efekt domyślnej konwersji do PDF" >}}
 
-Efekt cechuje się typową dla LaTeX-a schludnością. Szeryfowy font nie sprzyja jednak czytaniu z ekranu, a całość, poza ładnie pokolorowanym kodem, nastraja czytelnika podobnie jak błoto pośniegowe w Wigilię Bożego Narodzenia.
+<a href="simple-generic.pdf">Efekt</a> cechuje się typową dla LaTeX-a schludnością. Szeryfowy font nie sprzyja jednak czytaniu z ekranu, a całość, poza ładnie pokolorowanym kodem, nastraja czytelnika podobnie jak błoto pośniegowe w Wigilię Bożego Narodzenia.
 
 ## Szablon Eisvogel
 
 Tu przychodzi z pomocą szablon [Eisvogel](https://github.com/Wandmalfarbe/pandoc-latex-template) zaprojektowany do tworzenia materiałów dydaktycznych, szczególnie z zakresu IT. Myślę, że nada się też znakomicie do różnego rodzaju raportów, sprawozdań i dokumentacji technicznych. Zestaw [przykładów](https://github.com/Wandmalfarbe/pandoc-latex-template/tree/master/examples) pokazuje, że twórcy zadbali o implementację szeregu istotnych funkcji. Najważniejsze jednak, że za chwilę nasz dokument będzie się prezentował znacznie ciekawiej, wciąż zachowując elegancję.
 
+Arch Linux ma ten pakiet w AUR, a po instalacji wystarczy dopisać argument `--template eisvogel` i, ewentualnie, opcję `--listings`, jeżeli chcemy mieć inny wygląd bloków kodów --- właściwie to nawet mniej kolorowy niż w wersji generycznej, ale za to z dodatkowym wyróżnieniem.
+
+```
+pandoc simple.md -o simple-eisvogel.pdf --metadata date="$(date +%F)" --template eisvogel --listings
+```
+
+I to wszystko. Otrzymujemy znacznie nowocześniej wyglądający <a href="simple-eisvogel.pdf">dokument</a>. Moim zdaniem, poza tabelkami, prezentuje się to znakomicie.
+
 {{< figure src="simple-eisvogel.webp" link="simple-eisvogel.webp" title="Efekt konwersji z użyciem szablonu Eisvogel" >}}
+
+Zainstalowawszy Pandoca, LaTeX-a i Eisvogel otrzymujemy zatem narzędzie, którym możemy stworzyć zgrabnego PDF-a pisząc w Markdownie. Ponieważ wejściem jest plik tekstowy, możemy cały proces zautomatyzować wedle potrzeby, w skrajnym przypadku generując dokument całkowicie automatycznie. Jest nawet dostępny <a href="https://hub.docker.com/r/pandoc/extra">obraz Dockera</a>, który zawiera całe środowisko do kompilacji dokumentów.
 
 ## Większe możliwości
 
+Prostota, estetyka i możliwość oprogramowania to nie jedyne zalety narzędzia. Skoro już ściągnęliśmy cały ten kram na dysk, możemy skorzystać z bogactwa możliwości LaTeX-a, dającego możliwości przeogromne w porównaniu z procesorami tekstu takimi jak Microsoft Word. Oczywiście, skoro tracimy wygodę, jaką daje <abbr title="What You See Is What You Get">WYSIWYG</abbr>, powinniśmy przecież oczekiwać czegoś w zamian. I dostajemy. Może czasem wypozycjonowanie obiektu na stronie przyprawia o siwiznę włosów, ale za to żonglując ukośnikami i nawiasami sześciennymi dostajemy _out of the box_ możliwość rysowania diagramów, włącznie z typowymi dla elektroniki cyfrowej diagramami czasowymi, pisania dowolnie skomplikowanych równań, czy… osadzenia wyświetlacza alfanumerycznego, włącznie z samodzielnie zdefiniowanymi znakami. Biorąc pod uwagę bogactwo materiałów na temat LaTeX-a i wsparcie <abbr title="Artificial Intelligence">AI</abbr> korzystanie z tych zaawansowanych możliwości staje się bardziej przystępne.
+
+Poniżej mamy przykład:
+
+1. Blok komentarza ozdobiony ikoną z zestawu <a href="https://ctan.org/pkg/fontawesome">`fontawesome`</a>.
+1. Wyświetlacz alfanumeryczny.
+1. Wzór matematyczny.
+1. Listing pseudokodu z komentarzami.
+1. Przebieg czasowy.
+1. Graf.
+
+sldkjfls
 
     ---
     lang: "pl"
