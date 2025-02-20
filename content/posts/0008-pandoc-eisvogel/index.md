@@ -113,7 +113,7 @@ Prostota, estetyka i możliwość oprogramowania to nie jedyne zalety narzędzia
 
 Poniżej mamy przykład:
 
-1. Blok komentarza ozdobiony ikoną z zestawu <a href="https://ctan.org/pkg/fontawesome">`fontawesome`</a>.
+1. Blok komentarza ozdobiony ikoną z <a href="https://ctan.org/pkg/fontawesome">zestawu `fontawesome`</a>.
 1. Wyświetlacz alfanumeryczny.
 1. Wzór matematyczny.
 1. Listing pseudokodu z komentarzami.
