@@ -1,12 +1,15 @@
 .PHONY: all clean
 
-all: simple.pdf complex.pdf
+all: simple-generic.pdf simple-eisvogel.pdf complex.pdf
 
-simple.pdf: simple.md
-	pandoc $< -o $@ --template eisvogel --listings --metadata date="`date +%F`"
+simple-generic.pdf: simple.md
+	pandoc $< -o $@ --metadata date="`date +%F`"
+
+simple-eisvogel.pdf: simple.md
+	pandoc $< -o $@ --metadata date="`date +%F`" --template eisvogel --listings
 
 complex.pdf: complex.md
-	pandoc $< -o $@ --template eisvogel --listings --metadata date="`date +%F`"
+	pandoc $< -o $@ --template eisvogel --listings
 
 clean:
-	rm -f simple.pdf complex.pdf
+	rm -f *.pdf

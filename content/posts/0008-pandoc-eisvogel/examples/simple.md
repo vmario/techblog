@@ -22,8 +22,12 @@ Lorem ipsum dolor --- sit amet,
 [consectetur](https://example.com) adipiscing elit[^1].
 _Vestibulum_ **placerat** ***erat*** `quis` vulputate consequat.
 
-* Tincidunt vel sapien eget,
+Pellentesque dui turpis:
+
+* tincidunt vel sapien eget,
 * feugiat consequat nunc.
+
+In ultricies augue ut arcu maximus dapibus:
 
 1. In non eleifend sapien.
 2. Nullam facilisis id nibh vitae rhoncus.
@@ -38,13 +42,17 @@ _Vestibulum_ **placerat** ***erat*** `quis` vulputate consequat.
 ```c++
 #include <iostream>
 #include <vector>
+
 using namespace std;
+
 // Example code.
 int main() {
     const vector<int> NUMBERS{42, 43};
+
     for (const auto& number : NUMBERS) {
         [](int n){ cout << n << " "; }(number);
     }
+
     return EXIT_SUCCESS;
 };
 ```

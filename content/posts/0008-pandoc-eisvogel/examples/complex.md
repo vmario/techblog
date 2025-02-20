@@ -19,7 +19,7 @@ header-includes: |
     font=\footnotesize,
 }
 
-# Komentarz
+# Blok komentarza
 
 \awesomebox[teal]{2pt}{\faBook}{teal}{
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -71,7 +71,7 @@ SMA_k = \frac{1}{k} \sum^n_{i=n-k+1} p_i = \frac{p_{n-k+1} + p_{n-k+2} + \cdots 
 
 # Przebieg czasowy
 
-\begin{figure}
+\begin{figure}[h]
     \centering
     \begin{tikztimingtable}
         Przepełnienia timera 1 & L N(T0) G 10L G 10L G 9L [violet]; L [violet, dotted] \\
@@ -100,7 +100,7 @@ SMA_k = \frac{1}{k} \sum^n_{i=n-k+1} p_i = \frac{p_{n-k+1} + p_{n-k+2} + \cdots 
 
 # Graf
 
-\begin{figure}
+\begin{figure}[h]
     \centering
     \begin{tikzpicture}
         \node[state, initial, initial text=start] (main) {\texttt{main()}};
