@@ -10,17 +10,17 @@ motto:
   cite: "John von Neumann"
 ---
 
-## Kilka słów o Pandocu
+## Wprowadzenie do Pandoca
 
-[Pandoc](https://pandoc.org) jest **bardzo** wszechstronnym narzędziem do konwersji dokumentów między różnymi formatami. Najbardziej znany jest z konwersji plików tekstowych w formacie [Markdown](https://daringfireball.net/projects/markdown/) z wmieszanym [LaTeX-em](https://www.latex-project.org) na <abbr title="Portable Document Format">PDF</abbr> i <abbr title="Electronic Publication">EPUB</abbr>, przy której szczególnie uwidacznia się jego zdolność do zamieniania prostych formatów w bardzo złożone przy niewielkim zaangażowaniu użytkownika.
+[Pandoc](https://pandoc.org) jest **bardzo** wszechstronnym narzędziem do konwersji dokumentów między różnymi formatami. Najbardziej znany jest z transformacji plików tekstowych w formacie [Markdown](https://daringfireball.net/projects/markdown/) z wmieszanym [LaTeX-em](https://www.latex-project.org) w <abbr title="Portable Document Format">PDF</abbr> i <abbr title="Electronic Publication">EPUB</abbr>, przy której szczególnie uwidacznia się jego zdolność do zamiany prostych formatów w bardzo złożone przy niewielkim zaangażowaniu użytkownika.
 
-Wadą Pandoca, przynajmniej na Arch Linuksie, jest masa bardzo często aktualizowanych haskellowych zależności. Po zainstalowaniu pakietu ze standardowego repozytorium miałem wrażenie, że aktualizacje systemowe zajmują się głównie odświeżaniem Pandoca i jego zależności. Rozwiązałem to instalując z <abbr title="Arch User Repository">AUR</abbr> wersję skompilowaną z&nbsp;zależnościami, czyli <a href="https://aur.archlinux.org/packages/pandoc-bin">pakiet `pandoc-bin`</a>, zajmujący na dysku około 147&nbsp;MiB.
+Wadą Pandoca, przynajmniej na Arch Linuksie, jest masa bardzo często aktualizowanych haskellowych zależności. Po zainstalowaniu pakietu ze standardowego repozytorium miałem wrażenie, że aktualizacje systemowe zajmują się głównie odświeżaniem Pandoca i jego zależności. Rozwiązałem to, instalując z <abbr title="Arch User Repository">AUR</abbr> wersję skompilowaną z&nbsp;zależnościami, czyli <a href="https://aur.archlinux.org/packages/pandoc-bin">pakiet `pandoc-bin`</a>, zajmujący na dysku około 147&nbsp;MiB.
 
-Niestety, to jest dopiero początek okupowania dysku, bowiem głównym silnikiem Pandoca służącym do renderowania PDF-ów jest, jakże by inaczej, LaTeX. Ten zajmuje u mnie blisko 2&nbsp;GiB, z czego lwią część stanowią dodatkowe fonty. Tu jednak nie szukałem żadnych optymalizacji. Obecnie jestem pogodzony z faktem, że gdy wyrzucę LaTeX-a drzwiami, wróci oknem. Zbyt dobrze działa.
+Niestety, to jest dopiero początek okupowania dysku, bowiem głównym silnikiem Pandoca służącym do renderowania PDF-ów jest, jakżeby inaczej, LaTeX. Ten zajmuje u mnie blisko 2&nbsp;GiB, z czego lwią część stanowią dodatkowe fonty. Tu jednak nie szukałem żadnych optymalizacji. Pogodziłem się z faktem, że gdy wyrzucę LaTeX-a drzwiami, wróci oknem. Zbyt dobrze działa.
 
 ## Prosty przykład
 
-Weźmy teraz plik, prezentujący podstawowe formatowanie Markdown:
+Weźmy teraz plik, prezentujący podstawowe formatowanie Markdown[^1]. Na początku dorzucimy metadane w języku <abbr title="YAML Ain't Markup Language">YAML</abbr>, zgodnie z jego standardem zamknięte między znacznikami początku (`---`) i końca (`...`) dokumentu (z punktu widzenia YAML-a metadane są dokumentem samym w sobie). Są to głównie typowe metadane dokumentu tekstowego, opisujące tytuł czy autora, ale też wskazówki odnośnie procesu konwersji:
 
     ---
     title: "Lorem ipsum"
@@ -81,7 +81,9 @@ Weźmy teraz plik, prezentujący podstawowe formatowanie Markdown:
     };
     ```
 
-Kompilujemy to prostą komendą, przekazującą przy okazji datę kompilacji:
+[^1]: OK, nie tak całkiem podstawowe, bo dorzuciłem trochę LaTeX-owej typografii, ale naprawdę niewiele.
+
+Kompilujemy to prostą komendą, przekazującą przy okazji datę kompilacji, czyli jeszcze jedną metadaną:
 
 ```
 pandoc simple.md -o simple-generic.pdf --metadata date="$(date +%F)"
@@ -120,7 +122,7 @@ Poniżej mamy przykład:
 1. Przebieg czasowy.
 1. Graf.
 
-sldkjfls
+Realizuje to poniższy kod.
 
     ---
     lang: "pl"
