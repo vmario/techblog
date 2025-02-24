@@ -255,6 +255,6 @@ Możemy go uzyskać za pomocą poniższego kodu:
         \caption{Maszyna stanów uwzględniająca czas przełączania kanałów}
     \end{figure}
 
-Dla osoby nieznającej LaTeX-a przypomina to bigos z wmieszanymi zszywkami, ale czy wystruganie diagramu czasowego w Inkscape albo Microsoft Visio byłoby prostsze? Nie wydaje mi się. A wprowadzanie jakichkolwiek poprawek na takim diagramie albo stworzenie tuzina wersji dla różnych zagadnień na pewno jest prostsze w formie tekstowej.
+Dla osoby nieznającej LaTeX-a przypomina to bigos ze wmieszanymi zszywkami, ale czy wystruganie diagramu czasowego w Inkscape albo Microsoft Visio byłoby prostsze? Nie wydaje mi się. A wprowadzanie jakichkolwiek poprawek na takim diagramie albo stworzenie tuzina wersji dla różnych zagadnień na pewno jest prostsze w formie tekstowej.
 
 {{< figure src="complex.webp" link="complex.pdf" title="Może to nie jest proste, ale czy Wasz Word to potrafi?" >}}
