@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>{{ with .Title }}{{ . }}{{ else }}Prezentacja{{ end }}{{ with .Params.subtitle }}: {{ . }}{{ end }}</title>
+		<!-- Podstawowe style reveal.js. -->
+		<link rel="stylesheet" href="/reveal.js/dist/reset.css">
+		<link rel="stylesheet" href="/reveal.js/dist/reveal.css">
+		<link rel="stylesheet" href="/reveal.js/dist/theme/moon.css">
+		<!-- Kolorowanie składni. -->
+		<link rel="stylesheet" href="/reveal.js/plugin/highlight/monokai.css">
+		<!-- Skrypty reveal.js. -->
+		<script defer src="/reveal.js/dist/reveal.js"></script>
+		<script defer src="/reveal.js/plugin/markdown/markdown.js"></script>
+		<script defer src="/reveal.js/plugin/highlight/highlight.js"></script>
+		<script defer src="/reveal.js/plugin/notes/notes.js"></script>
+		<script defer src="/reveal.js/plugin/zoom/zoom.js"></script>
+		<script defer src="/reveal.js/plugin/search/search.js"></script>
+		<script defer src="/reveal.js/plugin/math/math.js"></script>
+		<!-- Konfiguracja. -->
+		<script defer src="/scripts/configuration.js"></script>
+		<!-- Własne style. -->
+		{{ with resources.Get "styles/main.sass" | toCSS -}}
+		<link rel="stylesheet" href="{{ .RelPermalink }}">
+		{{- end }}
+	</head>
+	<body>
+		<div class="reveal"><div class="slides">
+		{{ with .Title }}
+		<!-- Automatyczny slajd tytułowy. -->
+		<section>
+			<h1>{{ . }}{{ with $.Params.subtitle }}:<br>{{ . }}{{ end }}</h1>
+			<p>
+				Mariusz Chilmon<br>
+				<a href="mailto:vmario@vmario.org">vmario@vmario.org</a><br>
+				<a href="https://www.vmario.org">www.vmario.org</a>
+			</p>
+		</section>
+		{{ end }}
+		<!-- Reszta prezentacji. -->
+{{ .Content }}
+		</div></div>
+	</body>
+</html>

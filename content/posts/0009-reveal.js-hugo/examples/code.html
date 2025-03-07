@@ -1,0 +1,11 @@
+<pre><code
+		data-trim data-noescape data-id="code-animation"
+		{{ with .Get "lang" }}class="lang-{{ . }}"{{ end }}
+		{{ with .Get "lines" }}data-line-numbers="{{ . }}"{{ end }}
+	>
+	{{- with .Get "file" -}}
+	{{ (path.Join $.Page.File.Dir .) | readFile }}
+	{{ else }}
+	{{- .Inner -}}
+	{{ end }}
+</code></pre>

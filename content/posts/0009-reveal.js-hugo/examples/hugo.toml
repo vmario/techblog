@@ -1,0 +1,2 @@
+disableKinds = ['home', 'taxonomy']
+relativeURLs = true
