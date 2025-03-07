@@ -12,8 +12,10 @@ $code-shadow-geometry: $code-shadow-offset $code-shadow-offset 0 0
 .chroma
 	background-color: $color-background-code
 	.hl
+		background-color: inherit
+	.hl .cl
 		background-color: darken($color-background-code, 4%)
-		box-shadow: 0.1rem 0.1rem 0 0 darken($color-background-code, 24%)
+		border-left: solid 1px darken($color-background-code, 24%)
 	.c, .cm, .c1, .cs
 		font-style: italic
 	.lntd:nth-child(2)
