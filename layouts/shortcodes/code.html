@@ -1,0 +1,7 @@
+```{{ with .Get "lang" }}{{ . }}{{ end }}{{ with .Get "lines" }}{hl_lines=[{{ . | safeHTML }}]}{{ end }}
+{{ with .Get "file" -}}
+{{ (path.Join $.Page.File.Dir .) | readFile | safeHTML }}
+{{ else }}
+{{- .Inner -}}
+{{ end }}
+```
