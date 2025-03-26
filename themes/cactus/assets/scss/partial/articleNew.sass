@@ -79,3 +79,23 @@ pre code[data-lang]::before
 
 kbd
 	border: 1px solid $color-accent-3
+
+a
+	color: $color-text
+	text-decoration: none
+	border-bottom: solid 1px $color-text
+	&:hover
+		border-bottom: solid 0.2rem $color-link
+
+a.icon
+	border-bottom: none
+	&:hover
+		color: $color-link
+
+// TODO: Usunąć to okropne .h1 i #nav
+.h1, h1, h2, h3, h4, h5, h6, nav, #nav
+	a
+		color: inherit
+		border-bottom: none
+		&:hover
+			border-bottom: none
