@@ -1,8 +1,9 @@
-relativeURLs = true
 languageCode = "pl-pl"
 title = "vmario techblog"
 copyright = "Mariusz Chilmon"
 theme = "cactus"
+relativeURLs = true
+enableRobotsTXT = true
 ignoreFiles = ["examples/"]
 
 [markup]
