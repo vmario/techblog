@@ -4,7 +4,7 @@ date: 2025-04-09
 draft: false
 tags: [narzędzia, hugo, reveal.js]
 
-fortune: ""
+fortune: "Opowiedz historię. Ludzkie mózgi są stworzone do słuchania historii."
 motto:
   quote: "They may forget what you said, but they will never forget how you made them feel."
   cite: "Carl W. Buechner"
