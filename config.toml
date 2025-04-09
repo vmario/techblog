@@ -1,6 +1,7 @@
 languageCode = "pl-pl"
 title = "vmario techblog"
 copyright = "Mariusz Chilmon"
+baseURL="https://techblog.vmario.org"
 theme = "cactus"
 relativeURLs = true
 enableRobotsTXT = true
