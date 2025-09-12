@@ -13,11 +13,6 @@
     background-image: none;
     color: $color-text;
     text-decoration: none;
-  }
-  a:hover {
-    background-image: none;
-  }
-  a:hover:not(.active) {
-    color: $color-accent-2;
+    border-bottom: none;
   }
 }
