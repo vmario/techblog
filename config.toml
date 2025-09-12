@@ -5,10 +5,11 @@ baseURL="https://techblog.vmario.org"
 theme = "cactus"
 relativeURLs = true
 enableRobotsTXT = true
+disableKinds = ["section"]
 ignoreFiles = ["examples/"]
 
 [pagination]
-pagerSize = 4
+pagerSize = 64
 
 [markup]
   [markup.highlight]
@@ -44,11 +45,6 @@ link = "https://www.linkedin.com/in/mariuszchilmon/"
 name = "Start"
 url = "/"
 weight = 1
-
-[[menu.main]]
-name = "Wpisy"
-url = "/posts"
-weight = 2
 
 [[menu.main]]
 name = "Tagi"
