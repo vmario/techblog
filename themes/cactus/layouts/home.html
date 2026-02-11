@@ -1,0 +1,19 @@
+{{ define "content" }}
+  {{ partial "header.html" . }}
+  <main>
+    <summary>
+      <p>Zapiski inżyniera.</p>
+      <p>Znajdź mnie na
+        <a target="_blank" rel="noopener" href="mailto:vmario@vmario.org" title="E-mail"><i class="nf nf-fa-envelope"></i></a>,
+        <a target="_blank" rel="noopener" href="index.xml" title="Kanał RSS"><i class="nf nf-fa-rss"></i></a> i
+        <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/mariuszchilmon/" title="Profil na LinkedIn"><i class="nf nf-fa-linkedin_square"></i></a>.
+      </p>
+    </summary>
+    <section>
+      <h2>Blog</h2>
+      {{ $mainPosts := (sort ( where site.RegularPages "Type" "in" site.Params.mainSections ) "Date" "desc") }}
+      {{ .Store.Set "posts" (.Paginate $mainPosts).Pages }}
+      {{ partial "posts.html" . }}
+    </section>
+  </main>
+{{ end }}

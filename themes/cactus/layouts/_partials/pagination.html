@@ -1,0 +1,12 @@
+{{ $pag := $.Paginator }}
+{{ if gt $pag.TotalPages 1 }}
+      <nav>
+        {{ if $pag.HasPrev }}
+          <a href="{{ $pag.Prev.URL }}"><i class="nf nf-fa-chevron_left"></i></a>
+        {{ end }}
+        <span class="page-number">Page {{ $pag.PageNumber }} of {{ $pag.TotalPages }}</span>
+        {{ if $pag.HasNext }}
+          <a href="{{ $pag.Next.URL }}"><i class="nf nf-fa-chevron_right"></i></a>
+        {{ end }}
+      </nav>
+{{ end }}

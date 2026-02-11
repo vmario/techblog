@@ -1,0 +1,9 @@
+  <header><nav>
+    <a href="/">
+      <img src="{{ "../images/logo.svg" | relURL }}" style="width: 8rem">
+      <h1>{{ .Site.Title }}</h1>
+    </a>
+    <menu>
+      {{ partial "menu.html" . }}
+    </menu>
+  </nav></header>

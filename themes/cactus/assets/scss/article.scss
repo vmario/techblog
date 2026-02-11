@@ -1,0 +1,323 @@
+@use 'sizes';
+@use 'palette';
+@use 'widgets';
+
+// Import predefiniowanych stylów kolorowania składni
+@use 'syntax';
+@use 'sass:color';
+
+$shadowOffset: 0.2rem;
+$shadowGeometry: $shadowOffset $shadowOffset 0 0;
+
+// Reset konfliktu z Nerd Fonts
+.chroma .nf {
+  all: unset;
+}
+
+// Tuningowanie kolorowania składni
+.chroma {
+  background-color: palette.$backgroundCode;
+  .hl {
+    background-color: inherit;
+    .cl {
+      background-color: palette.$backgroundCodeMarked;
+      padding-right: 1em;
+      margin-left: -1em;
+      padding-left: 1em;
+    }
+  }
+  .c, .cm, .c1, .cs {
+    font-style: italic;
+  }
+  .lntd:nth-child(2) {
+    width: 100%;
+  }
+}
+
+body > main > nav {
+  position: sticky;
+  top: 0.5rem;
+  align-self: center;
+  margin-left: 0.5rem;
+  margin-top: 1rem;
+}
+
+article > header > summary i.nf {
+  margin-right: 1ex;
+}
+
+article > header > summary {
+  color: palette.$aside;
+}
+
+article > nav {
+  position: sticky;
+  top: 1.8rem;
+  align-self: start;
+  grid-area: toc;
+  margin-left: 0.5rem;
+  margin-top: 1rem;
+  color: palette.$aside;
+  line-height: 150%;
+  font-size: sizes.$miniFont;
+}
+
+article > nav * {
+  text-align: left;
+  hyphens: none;
+}
+
+article > nav > ul {
+  padding-left: 0;
+  margin-right: 2rem;
+}
+
+main > nav > menu {
+  @extend %horizontalMenu;
+
+  li {
+    border-width: 0;
+    padding: 0
+  }
+}
+
+main > nav > menu > li i.nf {
+  padding: 0 1ex;
+}
+
+article > nav > ul ul {
+  padding-left: 0.3rem;
+}
+
+article > nav > ul a {
+  color: palette.$aside;
+  display: block;
+}
+
+article > nav > ul > li {
+  border-left: dotted 1px palette.$aside;
+  padding-left: 0.5rem;
+  margin-bottom: 1ex;
+}
+
+article > nav > ul ul {
+  list-style-type: disc;
+  margin-left: 1em;
+}
+
+article > nav > ul ul li {
+  border-left: none;
+}
+
+article > main > section {
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+article > main > section > img {
+  max-width: 100%;
+}
+
+article > main > section > blockquote {
+  align-self: flex-start;
+}
+
+article h1 {
+  color: palette.$marked;
+  line-height: 1.2em;
+}
+
+article h2 {
+  line-height: 1.2em;
+}
+
+article h2, article h3 {
+  position: relative;
+  &:before {
+    position: absolute;
+    left: -1rem;
+    color: palette.$marked;
+    width: 1rem;
+  }
+}
+
+article h2:before {
+    content: "#";
+}
+
+article h3:before {
+  content: "•";
+}
+
+@media (min-width: sizes.$desktopWidthMin) {
+  body > main > article > header > summary > div {
+    display: inline;
+    &:before {
+      content: "| ";
+    }
+  }
+}
+
+@media not all and (min-width: sizes.$desktopWidthMin) {
+  body > main > article > header > summary > div {
+    margin: 1ex 0;
+  }
+
+  body > main > article > main {
+    & > h2:before, & > h3:before {
+      position: relative;
+      left: 0;
+      margin-right: 0.5rem;
+    }
+  }
+}
+
+pre, code, kbd, em {
+  background-color: palette.$backgroundCode;
+}
+
+:not(pre) > code, kbd {
+  box-shadow: $shadowGeometry palette.$shadow;
+  padding: 0 0.2rem;
+  margin-right: $shadowOffset;
+}
+
+a code {
+  box-shadow: $shadowGeometry palette.$border;
+}
+
+pre {
+  overflow-x: auto;
+  position: relative;
+  padding: 2.2em 1em 0.5em;
+  font-size: 0.9em;
+  box-shadow: $shadowGeometry palette.$shadow;
+  line-height: 1.5em;
+}
+
+.highlight pre {
+  box-shadow: $shadowGeometry palette.$shadowHighlight;
+}
+
+pre .code-copy-btn, pre code[data-lang]::before {
+  position: absolute;
+  top: 0;
+  color: palette.$backgroundCode;
+  font-size: 0.9em;
+  padding: 0.5em 1em 0.5em;
+  line-height: 1em;
+}
+
+pre .code-copy-btn {
+  left: 0;
+  border: 0;
+  text-align: right;
+  background-color: palette.$shadow;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #666;
+    background-color: palette.$border;
+  }
+}
+
+pre code[data-lang]::before {
+  content: attr(data-lang);
+  display: block;
+  background-color: palette.$shadow;
+  right: 0;
+  text-transform: uppercase;
+}
+
+kbd {
+  border: 1px solid palette.$shadow;
+}
+
+figure {
+  margin: 2em 1em;
+  text-align: center;
+}
+
+figure * {
+  max-width: 100%;
+}
+
+figcaption h4 {
+  font-style: normal;
+  text-align: center;
+  font-weight: normal;
+  font-size: 0.9em;
+  margin-top: 0.5em;
+  font-style: italic;
+}
+
+blockquote {
+  border-left: 2px solid #8c8c8c;
+  font-style: italic;
+  margin: 1em 0.8em;
+  padding: 0em 1em 0em 2em;
+  position: relative;
+  font-style: normal;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -4px;
+    height: 2em;
+    width: 5px;
+    margin-top: -1em;
+    background-color: white;
+    font-size: 1.3em;
+  }
+  &:after {
+    content: "󱀡";
+    font-family: "NerdFontsSymbols Nerd Font";
+    position: absolute;
+    top: 50%;
+    left: -0.5em;
+    font-style: italic;
+    text-align: center;
+    text-indent: -2px;
+    width: 1em;
+    margin-top: -0.6em;
+    font-size: 1.5em;
+    color: #8c8c8c;
+  }
+  footer cite:before {
+    padding: 0 .5em;
+    content: "—";
+  }
+}
+
+@media not all and (min-width: sizes.$desktopWidthMin) {
+  article {
+    blockquote {
+      border-top: 2px solid #8c8c8c;
+      border-bottom: 2px solid #8c8c8c;
+      border-left: none;
+      margin: 1.5em 0;
+      padding: 0.2em 1em;
+      width: calc(100% - 2em);
+      &:before {
+        left: 50%;
+        top: 0;
+        height: 4px;
+        margin-top: -3px;
+        margin-left: -1em;
+        width: 2em;
+      }
+      &:after {
+        left: 50%;
+        top: 0;
+        margin-left: -0.5em;
+      }
+    }
+  }
+}
+
+hr {
+  border: none;
+  border-bottom: 1px dashed palette.$aside;
+}

@@ -1,0 +1,31 @@
+@use 'palette';
+@use 'widgets';
+
+body > header {
+  margin-top: 1rem;
+
+  & a {
+    & img {
+      float: left;
+      margin-right: 1rem;
+      filter: grayscale(100%) brightness(40%);
+    }
+
+    &:hover img {
+      filter: none;
+    }
+  }
+
+  & > nav > a:hover {
+    text-decoration: none;
+  }
+
+  menu {
+    @extend %horizontalMenu;
+  }
+
+  & h1 {
+    margin: 0 0 0.5rem;
+    color: palette.$foreground;
+  }
+}

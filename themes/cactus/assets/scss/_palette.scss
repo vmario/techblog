@@ -1,0 +1,13 @@
+@use 'sass:color';
+
+$foreground: #333;
+$background: white;
+$backgroundCode: color.adjust($background, $lightness: -3%);
+$backgroundCodeMarked: color.adjust($backgroundCode, $lightness: -6%);
+$aside: gray;
+$inactive: #ddd;
+$marked: #2bbc8a;
+$active: #d480aa;
+$border: #666;
+$shadow: #8c8c8c;
+$shadowHighlight: #2bbc8a;

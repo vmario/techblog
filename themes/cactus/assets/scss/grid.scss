@@ -1,0 +1,59 @@
+@use 'sizes';
+
+body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr sizes.$asideWidth sizes.$contentWidthMax minmax(0, sizes.$asideWidth) 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: ". fastNav header . ." ". toc content . ." ". . footer . .";
+}
+
+body > header {
+  grid-area: header;
+}
+
+body > main > nav {
+  grid-area: fastNav;
+}
+
+body > main:first-child {
+  display: contents;
+}
+
+body > header + main, body > header + article {
+  grid-area: content;
+}
+
+body > main > article {
+  display: contents;
+  & > header {
+    grid-area: header;
+  }
+  & > main {
+    grid-area: content;
+  }
+}
+
+body > footer {
+  grid-area: footer;
+}
+
+@media not all and (min-width: sizes.$desktopWidthMax) {
+  body {
+    grid-template-columns: 0 sizes.$asideWidth minmax(0, sizes.$contentWidthMax) 0 0;
+  }
+}
+
+@media not all and (min-width: sizes.$desktopWidthMin) {
+  body {
+    grid-template-columns: 0 0 100vw 0 0;
+  }
+
+  body > main, body > header {
+    display: block;
+  }
+
+  body > main > article > nav, body > main > nav {
+    display: none;
+  }
+}

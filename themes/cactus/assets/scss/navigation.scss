@@ -1,0 +1,39 @@
+@use 'palette';
+
+a {
+  color: currentColor;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:has(i.nf) {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      color: palette.$active;
+      text-decoration: none;
+    }
+  }
+}
+
+nav a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+nav menu a, nav ul a {
+  color: palette.$marked;
+}
+
+menu li > i.nf {
+  color: palette.$inactive;
+}
+
+nav > menu, nav > ul {
+  list-style: none;
+}

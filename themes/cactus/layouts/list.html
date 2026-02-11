@@ -1,0 +1,10 @@
+{{ define "content" }}
+  {{ partial "header.html" . }}
+  <main>
+    <section>
+      <h2>Wpisy z tagiem <i>{{ .Title | lower}}</i></h2>
+      {{ .Store.Set "posts" .Paginator.Pages }}
+      {{ partial "posts.html" . }}
+    </section>
+  </main>
+{{ end }}

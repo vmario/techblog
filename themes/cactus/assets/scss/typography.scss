@@ -1,0 +1,48 @@
+@use 'palette';
+
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: normal;
+  src: local("JetBrains Mono Regular"), local("JetBrains-Mono-Regular"), url("../fonts/JetBrainsMono-Regular.woff2") format("woff2");
+  font-display: swap;
+};
+
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: italic;
+  font-weight: normal;
+  src: local("JetBrains Mono Italic"), local("JetBrains-Mono-Italic"), url("../fonts/JetBrainsMono-Italic.woff2") format("woff2");
+  font-display: swap;
+};
+
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: bold;
+  src: local("JetBrains Mono Bold"), local("JetBrains-Mono-Bold"), url("../fonts/JetBrainsMono-Bold.woff2") format("woff2");
+  font-display: swap;
+};
+
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: italic;
+  font-weight: bold;
+  src: local("JetBrains Mono Bold Italic"), local("JetBrains-Mono-BoldItalic"), url("../fonts/JetBrainsMono-BoldItalic.woff2") format("woff2");
+  font-display: swap;
+};
+
+body {
+  color: palette.$foreground;
+  font-size: 14px;
+}
+
+body, pre, code, kbd {
+  font-family: "JetBrains Mono", monospace;
+}
+
+p, article * {
+  line-height: 1.3rem;
+  text-align: justify;
+  hyphens: auto;
+}

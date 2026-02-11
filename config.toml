@@ -1,0 +1,28 @@
+languageCode = "pl-pl"
+title = "vmario techblog"
+copyright = "Mariusz Chilmon"
+baseURL="https://techblog.vmario.org"
+theme = "cactus"
+relativeURLs = true
+enableRobotsTXT = true
+disableKinds = ["section"]
+ignoreFiles = ["examples/"]
+
+[pagination]
+pagerSize = 64
+
+[markup]
+  [markup.highlight]
+    lineNos = false
+    style = "monokailight"
+    noClasses = false
+
+  [markup.goldmark.renderer]
+    unsafe = true
+
+[params]
+description = "Zapiski inżyniera."
+mainSection = "posts"
+rss = true
+tagsOverview = false
+show_updated = true

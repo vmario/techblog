@@ -1,0 +1,18 @@
+{{ define "content" }}
+  {{ partial "header.html" . }}
+  <main>
+    <section>
+      <h2>Tagi</h2>
+      <ul>
+        {{ $tagsMax := (index .Site.Taxonomies.tags.ByCount 0).Count }}
+        {{ range $tag := .Data.Terms.Alphabetical }}
+        <li>
+          <a style="font-weight: {{ (add 100 (mul 800 (div (float $tag.Count) $tagsMax))) }}"
+            href="{{ $tag.Page.RelPermalink }}">{{ .Page.Title | lower }}</a>
+          <aside>{{ $tag.Count }}</aside>
+        </li>
+        {{ end }}
+      </ul>
+    </section>
+  </main>
+{{ end }}

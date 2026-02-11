@@ -1,0 +1,161 @@
+$aside-color: gray;
+$active-color: #2bbc8a;
+$foreground-color: #333;
+$background-color: white;
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-family: monospace;
+  color: $foreground-color;
+}
+
+body > * {
+  max-width: 60rem;
+  border: dotted 0px red;
+  margin: 0 auto;
+}
+
+body > main, body > header {
+  clear: both;
+  display: grid;
+  grid-template-columns: 15rem min(30rem) minmax(0,15rem);
+  grid-template-rows: auto auto;
+  grid-template-areas: "nav header ." "toc article .";
+  margin: 0 auto;
+}
+
+body > main > nav {
+  grid-area: nav;
+  position: sticky;
+  top: 1rem;
+  margin-left: 0.5rem;
+}
+
+article {
+  display: contents;
+  & > header {
+    grid-area: header;
+  }
+  & > main {
+    grid-area: article;
+  }
+}
+
+article > nav {
+  position: sticky;
+  top: 3rem;
+  align-self: start;
+  margin-top: -999rem;
+  grid-area: toc;
+  color: $aside-color;
+  margin-left: 0.5rem;
+  line-height: 150%;
+}
+
+article > nav > menu {
+  padding-left: 0;
+  margin-right: 2rem;
+}
+
+article > nav > menu ul {
+  padding-left: 0.3rem;
+}
+
+article > nav > menu li {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-left: dotted 1px gray;
+  padding-left: 0.5rem;
+  & li {
+    border-left: dashed 1px gray;
+  }
+}
+
+article h1 {
+  color: $active-color;
+}
+
+article h2, article h3 {
+  position: relative;
+  &:before {
+    position: absolute;
+    left: -1rem;
+    color: $active-color;
+    width: 1rem;
+  }
+}
+
+article h2:before {
+    content: "#";
+}
+
+article h3:before {
+  content: "•";
+}
+
+body > footer {
+  position: sticky;
+  top: 100vh;
+  text-align: left;
+  margin: 0.5rem auto;
+  padding: 0 0.5rem;
+  display: flex;
+  color: $aside-color;
+  & > nav {
+    margin-left: auto;
+  }
+  & > nav > menu {
+    & > li {
+      display: inline-block;
+      border-right: 1px solid $aside-color;
+      padding-right: 0.5rem;
+    }
+    & > li:last-child {
+      border: none;
+      padding: 0;
+    }
+  }
+}
+
+nav > menu {
+  list-style: none;
+}
+
+p {
+  line-height: 1rem;
+}
+
+$desktopWidth: 45rem;
+
+@media (min-width: $desktopWidth) {
+  body > main > article > header > summary > div {
+    display: inline;
+    &:before {
+      content: "| ";
+    }
+  }
+}
+
+@media not all and (min-width: $desktopWidth) {
+  body > main {
+    display: block;
+  }
+  body > main > article > nav {
+    display: none;
+  }
+  body > main > nav {
+    position: relative;
+    top: 0;
+    margin: 0;
+  }
+  body > main > article > main {
+    & > h2:before, & > h3:before {
+      position: relative;
+      left: 0;
+      margin-right: 0.5rem;
+    }
+  }
+}
+

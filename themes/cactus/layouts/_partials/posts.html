@@ -1,0 +1,17 @@
+      <ul>
+        {{ $dataFormat := .Site.Params.dateFormat | default "2006-01-02" }}
+        {{ range .Store.Get "posts" -}}
+          <li>
+          {{ if .Params.tags -}}
+            <ul>
+              {{ range .Params.tags -}}
+                <li><a href="/tags/{{. | urlize }}">{{ . }}</a></li>
+              {{ end -}}
+            </ul>
+          {{ end -}}
+            <time datetime="{{ time .Date }}" itemprop="datePublished">{{ .Date.Format $dataFormat }}</time>
+            <a href="{{ .RelPermalink }}">{{ if .Title }} {{- .Title -}} {{ else }} {{- print "Untitled" -}}{{ end }}</a>
+          </li>
+        {{ end }}
+      </ul>
+      {{ partial "pagination.html" . }}

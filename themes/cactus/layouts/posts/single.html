@@ -1,0 +1,61 @@
+{{ define "content" }}
+<main>
+  <nav><menu>
+      <li><a href="/"><i class="nf nf-md-home"></i></a></li>
+      <li><a href="#"><i class="nf nf-md-format_align_top"></i></a></li>
+      <li>{{ if .PrevInSection }}<a href="{{ .PrevInSection.RelPermalink }}">{{ end }}<i class="nf nf-fa-chevron_left"></i>{{ if .PrevInSection }}</a>{{ end }}</li>
+      <li>{{ if .NextInSection }}<a href="{{ .NextInSection.RelPermalink }}">{{ end }}<i class="nf nf-fa-chevron_right"></i>{{ if .NextInSection }}</a>{{ end }}</li>
+  </menu></nav>
+  <article>
+    <header>
+      <h1>{{ .Title }}</h1>
+      <summary>
+        {{ $dateFormat := .Site.Params.dateFormat | default "2006-01-02" }}
+        <i class="nf nf-fa-keyboard"></i><time datetime="{{ .Date }}" itemprop="datePublished">{{ .Date.Format $dateFormat }}</time>
+          {{ if (and .Site.Params.show_updated (ne .Lastmod .Date)) }}
+            (aktualizacja <time datetime="{{ .Lastmod }}" itemprop="dateModified">{{ .Lastmod.Format $dateFormat }}</time>)
+          {{ end }}
+        <div><i class="nf nf-fa-clock"></i>
+          {{- $readTime := int (math.Round (div (countwords .Content) 220.0)) }}
+          {{- $readTime }}
+          {{ if eq $readTime 1 }}
+            minuta
+          {{ else if and (ge (mod $readTime 10) 2) (le (mod $readTime 10) 4) (or (lt (mod $readTime 100) 10) (ge (mod $readTime 100) 20)) }}
+            minuty
+          {{ else }}
+            minut
+          {{ end }}
+          czytania
+        </div>
+        {{ if gt .Params.tags 0 }}
+          <div><i class="nf nf-fa-tag"></i>
+            {{- range $index, $value := .Params.tags }}
+              {{- if gt $index 0 }}{{ print ", " }}{{ end -}}
+                <a class="tag-link" href="{{ "/tags/" | relLangURL }}{{ $value | urlize }}" rel="tag">{{ $value }}</a>
+            {{- end }}
+          </div>
+        {{ end }}
+      </summary>
+    </header>
+    {{ .TableOfContents }}
+    <main>
+      <section>
+        {{ with .Resources.GetMatch "header.png" }}
+          {{ with .Resize "x350 webp picture Lanczos" }}
+            <img alt="Ozdobnik" src="{{ .RelPermalink }}" {{ with $.Page.Params.fortune }}title="{{ . }}"{{ end }}>
+          {{ end }}
+        {{ end }}
+        {{ with $motto := .Params.motto }}
+          <blockquote>
+            <p>{{ .quote | safeHTML}}</p>
+            {{ with .cite }}
+              <footer>{{ with $motto.author }}<span>{{ . | safeHTML }}</span>{{ end }}<cite>{{ . | safeHTML }}</cite></footer>
+            {{ end }}
+          </blockquote>
+        {{ end }}
+      </section>
+      {{ .Content }}
+    </main>
+  </article>
+</main>
+{{ end }}

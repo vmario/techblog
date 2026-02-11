@@ -1,0 +1,57 @@
+@use 'sizes';
+@use 'palette';
+@use 'widgets';
+
+body > main > section {
+  & > ul {
+    padding: 0;
+  }
+
+  & > ul > li {
+    list-style-type: none;
+    display: flex;
+    position: relative;
+    margin-bottom: 0.5rem;
+  }
+
+  & > ul > li > time {
+    margin-right: 1rem;
+    color: palette.$aside;
+  }
+
+  & > ul > li > ul, & > ul > li > aside {
+    text-align: right;
+    position: absolute;
+    right: 100%;
+    white-space: nowrap;
+    margin-right: 1rem;
+  }
+
+  & > ul > li > ul {
+    @extend %horizontalMenu;
+    font-size: sizes.$miniFont;
+    margin-top: 0.12rem;
+  }
+
+  & > ul > li > ul > li > a {
+    color: palette.$aside;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+@media not all and (min-width: sizes.$desktopWidthMin) {
+  body > main > section {
+    & > ul > li {
+      display: block;
+    }
+
+    & > ul > li > time {
+      display: block;
+      margin: 1rem 0 0.2rem;
+    }
+  }
+}
