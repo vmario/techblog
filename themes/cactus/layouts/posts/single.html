@@ -1,10 +1,10 @@
 {{ define "content" }}
 <main>
   <nav><menu>
-      <li><a href="/"><i class="nf nf-md-home"></i></a></li>
-      <li><a href="#"><i class="nf nf-md-format_align_top"></i></a></li>
-      <li>{{ if .PrevInSection }}<a href="{{ .PrevInSection.RelPermalink }}">{{ end }}<i class="nf nf-fa-chevron_left"></i>{{ if .PrevInSection }}</a>{{ end }}</li>
-      <li>{{ if .NextInSection }}<a href="{{ .NextInSection.RelPermalink }}">{{ end }}<i class="nf nf-fa-chevron_right"></i>{{ if .NextInSection }}</a>{{ end }}</li>
+      <li><a href="/" aria-label="Strona główna"><i class="nf nf-md-home"></i></a></li>
+      <li><a href="#" aria-label="Przewiń do góry"><i class="nf nf-md-format_align_top"></i></a></li>
+      <li>{{ if .PrevInSection }}<a href="{{ .PrevInSection.RelPermalink }}" aria-label="Poprzednia strona">{{ end }}<i class="nf nf-fa-chevron_left"></i>{{ if .PrevInSection }}</a>{{ end }}</li>
+      <li>{{ if .NextInSection }}<a href="{{ .NextInSection.RelPermalink }}" aria-label="Następna strona">{{ end }}<i class="nf nf-fa-chevron_right"></i>{{ if .NextInSection }}</a>{{ end }}</li>
   </menu></nav>
   <article>
     <header>
@@ -42,7 +42,7 @@
       <section>
         {{ with .Resources.GetMatch "header.png" }}
           {{ with .Resize "x350 webp picture Lanczos" }}
-            <img alt="Ozdobnik" src="{{ .RelPermalink }}" {{ with $.Page.Params.fortune }}title="{{ . }}"{{ end }}>
+          <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="" {{ with $.Page.Params.fortune }}title="{{ . }}"{{ end }}>
           {{ end }}
         {{ end }}
         {{ with $motto := .Params.motto }}
